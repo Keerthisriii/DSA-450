@@ -1,0 +1,23 @@
+arr = [1,2,3,4,5,6,7]
+n = len(arr)
+d = 3   #d indicates no of rotations
+#step-1  retrive 1st d elements into temporary array 
+temp = arr[:3]
+
+#step-2 move the elements after d to beginning of the array
+
+for i in range(d,n):
+    arr[i-d] =  arr[i]
+    
+#after completing the this above loop the array contains 4,5,6,7 in the beginning
+
+#step-3 put the elements of temporary array(temp) to end of array
+
+# j = 0  #this pointer of temp that represents index of temp
+# for i in range(n-d,n):
+#     arr[i] = temp[j]  
+#     j+=1
+
+arr = arr[:n-d] + temp
+
+print(arr)
